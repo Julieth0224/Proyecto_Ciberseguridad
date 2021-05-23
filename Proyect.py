@@ -233,7 +233,19 @@ C4 = ['9', '11', '17', '21', '23', '25', '26', '31', '35', '40']
 Attacks_names = {'1':'Initial Access', '2':'Execution', '3':'Privilege Escaletion',
         '4':'Defense Evasion', '5':'Credential Access', '6':'Exfiltration',
         '7':'Command and Control', '8':'Impact'}
-
+Tecnicas_names = {'9':'Admin Access', '10':'API Monitoring', '11':'Application Diversity',
+                  '12':'Backup and Recovery', '13':'Baselina', '14':'Behavioral Analytics',
+                  '15':'Burn-In', '16':'Decoy Account', '17':'Decoy Content',
+                  '18':'Decoy Credentials', '19':'Decoy Diversity', '20':'Decoy Network',
+                  '21':'Decoy Persona', '22':'Decoy Process', '23': 'Decoy System',
+                  '24':'Detonate Malware', '25':'Email Manipulation',
+                  '26':'Hardware Manipulation', '27':'Hunting', '28':'Isolation',
+                  '29':'Migrate Attack Vector', '30':'Network Diversity',
+                  '31':'Network Manipulation', '32': 'Network Monitoring',
+                  '33':'PCAP Collection', '34':'Peropheral Management',
+                  '35':'Pocket Litter', '36':'Protocol Decoder', '37':'Security Controls',
+                  '38':'Standard Operating Procedure', '39':'System Activity Monitoring',
+                  '40':'User Training', '41':'Software Manipulation'}
 
 L1 = ['16', '18', '15', '39', '37', '29', '28', '23', '20', '19', '25', '40', '21'] # Initial Access
 L2 = ['9', '37', '23', '39', '41', '10', '11', '24', '38'] # Execution
@@ -426,8 +438,18 @@ path = all_paths(copy_new)
 final_path = final_list(copy_new)
 # for q in path:
 #     print(q)
+# for q in final_path:
+#     print(q)
+Names_list = []
 for q in final_path:
+    for index, value in enumerate(q):
+        q[index] = Tecnicas_names[value]
     print(q)
+
+        # for j in range(1,5):
+        # Names_list.append(Tecnicas_names[q])
+        # print(Names_list)
+        # Names_list = []
 
 # Miramos aristas y nodos de los caminos
 aristas = convert_edges(path)
